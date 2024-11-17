@@ -17,15 +17,31 @@ const JUMP_VEL = 7
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 func _process(delta):
-	swipe()
-	if swipeDir == 1:
+	#swipe()
+	#if swipeDir == 1:
+		#print('right?')
+		#if curPos < 2:
+			#curPos += 1
+			#swipeDir = 0
+	#elif swipeDir == -1:
+		#print('left?')
+		#if curPos > 0:
+			#curPos -= 1
+			#swipeDir = 0
+			
+	if Input.is_action_just_pressed("right"):
 		if curPos < 2:
 			curPos += 1
 			swipeDir = 0
-	elif swipeDir == -1:
+
+	if Input.is_action_just_pressed("left"):
 		if curPos > 0:
 			curPos -= 1
 			swipeDir = 0
+			
+	if Input.is_action_just_pressed("up"):
+		velocity.y = JUMP_VEL
+			
 			
 	position.z = lerpf(position.z, positions[curPos],delta*30)
 	if death_sensor.is_colliding():
