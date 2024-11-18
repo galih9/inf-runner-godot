@@ -1,8 +1,7 @@
-res://modules/module2.tscn
+res://modules/module1.tscn
 res://art/materials/grey.tres
 res://art/materials/red.tres
-res://modules/module3.tscn
-res://scenes/Level.gd
-res://scenes/Player.gd
-res://scenes/main.tscn
 res://art/materials/green.tres
+res://scenes/Level.gd
+res://scenes/main.tscn
+res://modules/module4.tscn
