@@ -16,6 +16,22 @@ var swipeDir = 0
 const JUMP_VEL = 7
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
+#bullet
+var bullet = load("res://scenes/bullet.tscn")
+var bulletInstance
+
+# attack speed
+var attack_speed = 1.0 # seconds
+
+func _ready() -> void:
+	pass;
+	#var timer = Timer.new()
+	#timer.wait_time = attack_speed
+	#timer.autostart = true
+	#timer.one_shot = false
+	#timer.connect("timeout", self, "_on_Timer_timeout")
+	#add_child(timer)
+
 func _process(delta):
 	#swipe()
 	#if swipeDir == 1:
@@ -42,7 +58,12 @@ func _process(delta):
 	if Input.is_action_just_pressed("up"):
 		velocity.y = JUMP_VEL
 			
-			
+	bulletInstance = bullet.instantiate()
+	bulletInstance.position = position
+	bulletInstance.transform.basis = self.global_transform.basis
+	bulletInstance.rotation = self.global_rotation
+	# bulletInstance.transform.basis = self.global_transform.basis
+	get_parent().add_child(bulletInstance)
 	position.z = lerpf(position.z, positions[curPos],delta*30)
 	if death_sensor.is_colliding():
 		death()
