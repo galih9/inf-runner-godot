@@ -1,13 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://urka8ho68bnr"]
+[gd_scene load_steps=5 format=3 uid="uid://dfn1c5cdqiffs"]
 
-[ext_resource type="Script" path="res://modules/module.gd" id="1_5avdq"]
-[ext_resource type="ArrayMesh" uid="uid://cu34sjirpgpco" path="res://art/models/module5.obj" id="2_clp3o"]
+[ext_resource type="Script" path="res://modules/module.gd" id="1_3b84f"]
+[ext_resource type="ArrayMesh" uid="uid://cu34sjirpgpco" path="res://art/models/module5.obj" id="2_6noyj"]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_djxlb"]
 data = PackedVector3Array(-10, 0.2, -4.6667, -10, -0.2, -4.6667, -10, 0.2, -5, -10, 0.2, -5, -10, -0.2, -4.6667, -10, -0.2, -5, -10, 0.2, -5, -10, -0.2, -5, -4, 0.2, -5, -4, 0.2, -5, -10, -0.2, -5, -4, -0.2, -5, -4, 0.2, 4.6667, -4, -0.2, 4.6667, -4, 0.2, 5, -4, 0.2, 5, -4, -0.2, 4.6667, -4, -0.2, 5, -4, 0.2, 5, -4, -0.2, 5, -10, 0.2, 5, -10, 0.2, 5, -4, -0.2, 5, -10, -0.2, 5, -4, -0.2, 4.6667, -10, -0.2, 4.6667, -4, -0.2, 5, -4, -0.2, 5, -10, -0.2, 4.6667, -10, -0.2, 5, -4, 0.2, 5, -10, 0.2, 5, -4, 2, 5, -4, 2, 5, -10, 0.2, 5, -10, 2, 5, -10, 0.2, -4.6667, -10, 0.2, -5, -10, 2, -4.6667, -10, 2, -4.6667, -10, 0.2, -5, -10, 2, -5, -10, 0.2, -4.6667, -4, 0.2, -4.6667, -10, 0.2, 4.6667, -10, 0.2, 4.6667, -4, 0.2, -4.6667, -4, 0.2, 4.6667, -4, -0.2, -5, -10, -0.2, -5, -4, -0.2, -4.6667, -4, -0.2, -4.6667, -10, -0.2, -5, -10, -0.2, -4.6667, -4, -0.2, -4.6667, -10, -0.2, -4.6667, -4, -0.2, 4.6667, -4, -0.2, 4.6667, -10, -0.2, -4.6667, -10, -0.2, 4.6667, -4, 0.2, -5, -4, -0.2, -5, -4, 0.2, -4.6667, -4, 0.2, -4.6667, -4, -0.2, -5, -4, -0.2, -4.6667, -4, 0.2, -4.6667, -4, -0.2, -4.6667, -4, 0.2, 4.6667, -4, 0.2, 4.6667, -4, -0.2, -4.6667, -4, -0.2, 4.6667, -10, 0.2, 5, -10, -0.2, 5, -10, 0.2, 4.6667, -10, 0.2, 4.6667, -10, -0.2, 5, -10, -0.2, 4.6667, -10, 0.2, 4.6667, -10, -0.2, 4.6667, -10, 0.2, -4.6667, -10, 0.2, -4.6667, -10, -0.2, 4.6667, -10, -0.2, -4.6667, -10, 2, 4.6667, -4, 2, 4.6667, -10, 2, 5, -10, 2, 5, -4, 2, 4.6667, -4, 2, 5, -10, 0.2, 5, -10, 0.2, 4.6667, -10, 2, 5, -10, 2, 5, -10, 0.2, 4.6667, -10, 2, 4.6667, -10, 0.2, 4.6667, -4, 0.2, 4.6667, -10, 2, 4.6667, -10, 2, 4.6667, -4, 0.2, 4.6667, -4, 2, 4.6667, -4, 0.2, 4.6667, -4, 0.2, 5, -4, 2, 4.6667, -4, 2, 4.6667, -4, 0.2, 5, -4, 2, 5, -10, 2, -5, -4, 2, -5, -10, 2, -4.6667, -10, 2, -4.6667, -4, 2, -5, -4, 2, -4.6667, -4, 0.2, -4.6667, -10, 0.2, -4.6667, -4, 2, -4.6667, -4, 2, -4.6667, -10, 0.2, -4.6667, -10, 2, -4.6667, -4, 0.2, -5, -4, 0.2, -4.6667, -4, 2, -5, -4, 2, -5, -4, 0.2, -4.6667, -4, 2, -4.6667, -10, 0.2, -5, -4, 0.2, -5, -10, 2, -5, -10, 2, -5, -4, 0.2, -5, -4, 2, -5)
 
+[sub_resource type="ViewportTexture" id="ViewportTexture_xhaxk"]
+viewport_path = NodePath("Node3D/SubViewport")
+
 [node name="Node3D" type="Node3D"]
-script = ExtResource("1_5avdq")
+script = ExtResource("1_3b84f")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 
@@ -17,4 +20,39 @@ shape = SubResource("ConcavePolygonShape3D_djxlb")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 0)
-mesh = ExtResource("2_clp3o")
+mesh = ExtResource("2_6noyj")
+
+[node name="Node3D" type="Node3D" parent="."]
+transform = Transform3D(-1.31134e-07, 0, -3, 0, 3, 0, 3, 0, -1.31134e-07, 0, 2.0564, -2.85488)
+
+[node name="SubViewport" type="SubViewport" parent="Node3D"]
+disable_3d = true
+own_world_3d = true
+transparent_bg = true
+size = Vector2i(120, 120)
+render_target_update_mode = 4
+
+[node name="ColorRect" type="ColorRect" parent="Node3D/SubViewport"]
+modulate = Color(1, 0.262, 0.18, 0.247059)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Node3D/SubViewport"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+theme_override_colors/font_color = Color(0.729412, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "x 2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sprite3D" type="Sprite3D" parent="Node3D"]
+no_depth_test = true
+texture = SubResource("ViewportTexture_xhaxk")
